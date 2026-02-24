@@ -1,80 +1,94 @@
 # Warehouse & Shipping Tracker
 
-## Pages & Features
+Warehouse inventory and shipment tracking management.
 
-### 1. Dashboard
-- Warehouse capacity utilization gauges
-- Inbound / outbound shipment counts today
-- Pending orders to fulfill
-- Delivery performance (on-time %)
-- Alerts (delayed shipments, low stock)
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Inbound
-- Expected deliveries schedule
-- Receive shipment against PO
-- Quality check & acceptance workflow
-- Put-away assignment (assign to bin / location)
-- Discrepancy reporting
+## Tech Stack
 
-### 3. Inventory
-- Real-time stock levels by product, location, lot
-- Bin / shelf location management
-- Stock search with filters (SKU, category, location)
-- Cycle count scheduling & recording
-- Stock adjustment & write-off
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Orders
-- Incoming order list from sales channels
-- Order detail: items, quantities, customer, priority
-- Pick list generation (batch / wave picking)
-- Order status tracking (received → picking → packing → shipped)
-- Backorder management
+## Getting Started
 
-### 5. Picking & Packing
-- Pick task queue per warehouse worker
-- Scan-to-verify picking
-- Packing slip & label generation
-- Weight & dimension recording
-- Quality check before ship
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Outbound / Shipping
-- Carrier selection & rate comparison
-- Shipping label generation
-- Tracking number assignment
-- Dispatch confirmation
-- Proof of delivery recording
+## License
 
-### 7. Shipment Tracking
-- Track all shipments with real-time status
-- Shipment timeline (milestones)
-- Carrier tracking link integration
-- Customer notification triggers
-- Exception / delay flagging
+MIT © Mehdi Nabhani
 
-### 8. Returns
-- Return authorization (RMA) creation
-- Receive & inspect returned items
-- Restock or dispose decision
-- Refund / replacement processing
-- Return reason analytics
+---
 
-### 9. Warehouses & Locations
-- Multi-warehouse management
-- Warehouse layout (zones, aisles, bins)
-- Location capacity tracking
-- Transfer between warehouses
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Reports
-- Order fulfillment rate & speed
-- Inventory accuracy
-- Carrier performance comparison
-- Warehouse throughput
-- Cost per order shipped
-- Export as PDF / CSV
+# {{APP_TITLE}}
 
-### 11. Settings
-- Warehouse configuration
-- Carrier accounts & API keys
-- Barcode / label format
-- Notification rules
-- User roles & permissions
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
